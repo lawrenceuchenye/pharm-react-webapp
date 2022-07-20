@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+  margin:0;
+  padding:0;
+  font-family:"Poppins",serif;
+}
+
+.mb{
+  display:none;
+}
+
+.wnd{
+  display:block;
+}
+
+.App{
+  background:rgba(145,224,255,0.3),url("https://images.pexels.com/photos/159211/headache-pain-pills-medication-159211.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+}
+
+/*---  MOBILE NAVBAR ---*/
+
+@keyframes Blurin{
+  0%{
+    backdrop-filter:blur(0px);
+  }
+  100%{
+    backdrop-filter:blur(8px);
+  }
+}
+ 
+.nav{
+  transition:0.1s;
+}
+
+
+.mnavbar--open{
+  backdrop-filter:blur(8px);
+}
+
+@keyframes FadeXin{
+  0%{
+   opacity:0;
+   transform:translateX(100%);
+  }
+  100%{
+   opacity:1;
+   transform:translateX(0%);
+  }
+}
+
+.mnavbar--closed a{
+  opacity:0;
+}
+
+.nav .mMenu li{
+  opacity:0;
+}
+
+.mnavbar--open .mMenu li{   
+   animation:FadeXin 1s forwards;
+}
+
+.mnavbar--open .mMenu li:nth-child(1){
+  animation-delay:200ms;
+}
+
+.mnavbar--open .mMenu li:nth-child(2){
+  animation-delay:300ms;
+}
+
+.mnavbar--open .mMenu li:nth-child(3){
+  animation-delay:400ms;
+}
+
+.mnavbar--open .mMenu li:nth-child(4){
+  animation-delay:500ms;
+}
+
+.mnavbar--open .mMenu li:nth-child(5){
+  animation-delay:600ms;
+}
+
+/*--- DESKTOP NAVBAR ----*/
+@keyframes fadeDown{
+  0%{
+    transform:tranlsateY(-100%);
+    opacity:0;
+   }
+  100%{
+    transform:translateY(0%);
+    opacity:1;
+  }
+}
+
+.mbd-nav ul li{
+  opacity:0;
+}
+
+.dnavbar ul li{
+  animation:fadeDown 1s forwards;
+}
+
+.mbd-nav ul li:nth-child(1){
+  animation-delay:200ms;
+}
+
+.mbd-nav ul li:nth-child(2){
+  animation-delay:400ms;
+}
+
+.mbd-nav ul li:nth-child(3){
+  animation-delay:600ms;
+}
+
+.mbd-nav ul li:nth-child(4){
+  animation-delay:800ms;
+}
+
+.mbd-nav ul li:nth-child(5){
+  animation-delay:1000ms;
+}
+
+/*--- MAIN BODY TEXT ----*/
+@keyframes fadeUpIn{
+   0%{
+     transform:translateY(30px);
+     opacity:0;
+    }
+   100%{
+     transform:translateY(0);
+     opacity:1;
+   }
+}
+
+@keyframes fadeIn{
+   0%{
+     opacity:0;
+    }
+   100%{
+     opacity:1;
+   }
+}
+
+.mb-container .mtitle,.mbody,.btn{
+  opacity:0;
+}
+
+.mb-container .mtitle,.mbody,.btn{
+  animation:fadeUpIn 1s forwards;
+}
+
+
+.mb-container .mtitle{
+   animation-delay:200ms;
+}
+
+.mb-container .mbody{
+  animation-delay:600ms;
+}
+
+.mb-container .btn{
+  animation-delay:1000ms;
+}
+
+/*----- SERVICES -----*/
+
+.sdm-container{
+  display:flex;
+}
+
+.services{
+  display:flex;
+  justify-content:center;
+}
+
+.services .m-stb{
+  margin:0px 10px;
+}
+
+.imgDiv .mImage{
+  opacity:0;
+}
+
+.imgDiv .mImage{
+   animation:fadeUpIn 1s forwards;
+}
+
+.imgDiv .mImage{
+  animation-delay:500ms;
+}
+
+
+.imgDiv{
+  width:50%;
+}
+
+
+/*----- ABOUT ------*/
+
+.abt-container{
+  display:flex;
+}
+
+
+.abt-container div{
+/*  width:50%;*/
+}
+
+
+/*----- FOOTER ----*/
+.footer{
+  display:flex;
+}
+
+
+/*----- SERVICES PAGE ------*/
+
+
+
+.sib{
+  border-radius:3px;
+  transition:0.2s;
+  height:40%;
+ }
+
+.info{
+   opacity:1;
+   transition:0.2s;
+}
+
+.icon{
+   transition:0.2s;
+   transform:scale(1);
+}
+
+.sbtn{
+  transition:0.2s;  
+  transform:translateY(0px);
+  position:absolute;
+  right:105px;;
+}
+
+
+.smb:hover .icon{
+  transform:scale(1.2);
+}
+
+
+
+.spage{
+  display:flex;
+  justify-content:space-between;
+}
+
+
+
+@media only screen and (max-width:750px){
+   .footer{
+     display:block;
+    }
+
+   .abt-container{
+      display:block;
+   }
+
+    .abt-container div{
+      width:100%;
+      padding:8px 10px;
+    }
+
+    .abt-container div h1{
+       margin-left:6px;
+       padding:8px 10px;
+    }
+
+   .mb{
+     display:block;
+   }
+
+   .wnd{
+     display:none;
+    }
+     .sdm-container{
+       display:block;
+     }
+
+      .imgDiv{
+        width:350px;height:400px;
+        position:relative;
+        left:-30px;
+      }
+
+    .services{
+      display:block;
+      flex-wrap:wrap;
+      text-align:center;
+      justify-content:center;
+     }
+     
+     .services div{
+       width:100%;
+      }
+
+    .services .m-stb{
+       margin:10px 0px;
+    }
+  
+    .mcontainer{
+       overflow-y:scroll;
+       height:83.5vh;
+     } 
+
+     .App{
+        height:100vh;
+      }
+
+     .spage{
+        display:block;
+        justify-content:center;
+      }
+}
+
+
+

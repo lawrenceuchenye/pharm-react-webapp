@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
+import Navbar from "./components/Navbar";
+import MobileMenu from "./components/MobileMenu";
+import Footer from "./components/Footer";
+
+
+import Home from "./Home";
+import ServicesPage from  "./views/ServicesPage";
+import AboutUsPage from "./views/AboutUsPage";
+
+import {useState} from "react";
 
 function App() {
+  const [showNav,setShowNav]=useState(false);
+
+  const ToggleNav=()=>{
+    setShowNav(!showNav);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <Router>
+       <div className="h-[100vh]">
+           <Navbar toggleNav={ToggleNav}/>
+           <MobileMenu showNav={showNav} toggleNav={ToggleNav} />
+           <Routes>
+               <Route path="/" element={<Home />} />
+            </Routes>
+           <Routes>
+              <Route path="/services/" element={<ServicesPage />}/>
+            </Routes>
+           <Routes>
+              <Route path="/about/" element={<AboutUsPage />}/>
+             </Routes>
+           <Footer />
+         </div>
+       </Router>
   );
 }
 
+
+const AppCSS={
+ 
+};
+
 export default App;
+
